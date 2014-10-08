@@ -1,7 +1,7 @@
 ﻿body {      background-color: #02B5C6;
 			padding-left:5px;
 			font-family: Veranda, Geneva, Arial, Helvetica, sans-serif;
-			font-size: 12pt;}
+			font-size: 14pt;}
 			
 			
 h1 { font-style:italic; font-weight:bold; font-size: 22pt;}
@@ -10,5 +10,5 @@ h2 { font-style:italic; font-weight:bold; font-size: 18pt;}
 
 h3 { font-weight:bold;}
 
-.webapp { padding-left:85px; padding-top:35px; width:55%; 
+.webapp { margin-left:45px; padding-left:30px; padding-top:35px; padding-bottom:35px; width:70%; 
           background-color: #4FC8D3; border:2px solid black; }
