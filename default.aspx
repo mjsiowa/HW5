@@ -11,9 +11,9 @@
     <form id="form1" runat="server">
     <div class="webapp">
     
-    <h1>Awesome Mortgage Calculator</h1>
-        <br />
-        
+
+    <img class="photo" src="/pics/home.jpg" /><h2>Awesome Mortgage Calculator</h2>
+     
 
         <table border="0">
         <tr>
