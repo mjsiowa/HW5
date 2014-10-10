@@ -59,6 +59,7 @@ Partial Class _Default
 
         'This section uses the for loop to display the loan balance and interest paid over the term of the loan.
         Dim counterStart As Integer
+        Dim duedate As Date = Date.Now
 
 
 
@@ -69,7 +70,7 @@ Partial Class _Default
             principal = monthlyPayment - interestPaid
             nBalance = loanAmount - principal
             loanAmount = nBalance
-
+            duedate = DateAdd(DateInterval.Month, counterStart, Date.Now)
 
 
             'Writes the data to a new row in the gridview.
@@ -78,7 +79,7 @@ Partial Class _Default
             tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
             tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
             ' my edit starts here
-            tRow("Due Date") = DateAdd(DateInterval.Month, counterStart, Date.Now)
+            tRow("Due Date") = String.Format("{0:d}", duedate)
             tRow("New Balance") = String.Format("{0:C}", nBalance)
 
             ' my edit ends here
