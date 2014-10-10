@@ -50,10 +50,17 @@ Partial Class _Default
         loanAmortTbl.Columns.Add("Payment Number", System.Type.GetType("System.String"))
         loanAmortTbl.Columns.Add("Principal Paid", System.Type.GetType("System.String"))
         loanAmortTbl.Columns.Add("Interest Paid", System.Type.GetType("System.String"))
+        ' my edit starts here
+        loanAmortTbl.Columns.Add("Due Date", System.Type.GetType("System.String"))
+        loanAmortTbl.Columns.Add("New Balance", System.Type.GetType("System.String"))
+        ' my edit ends here
+
 
 
         'This section uses the for loop to display the loan balance and interest paid over the term of the loan.
         Dim counterStart As Integer
+
+
 
         For counterStart = 1 To loanTerm
 
@@ -63,11 +70,19 @@ Partial Class _Default
             nBalance = loanAmount - principal
             loanAmount = nBalance
 
+
+
             'Writes the data to a new row in the gridview.
             tRow = loanAmortTbl.NewRow()
             tRow("Payment Number") = String.Format(counterStart)
             tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
             tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
+            ' my edit starts here
+            tRow("Due Date") = DateAdd(DateInterval.Month, counterStart, Date.Now)
+            tRow("New Balance") = String.Format("{0:C}", nBalance)
+
+            ' my edit ends here
+
             loanAmortTbl.Rows.Add(tRow)
 
             'Loops to next counterStart (Continues loop until counterStart requirements are met (loanTerm)).
@@ -83,4 +98,18 @@ Partial Class _Default
     
     
    
+    Protected Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
+
+        ' Clear out entries
+        tbLoanAmt.Text = String.Empty
+        tbAnnualInterest.Text = String.Empty
+        tbLoanTerm.Text = String.Empty
+
+
+
+
+
+
+
+    End Sub
 End Class
