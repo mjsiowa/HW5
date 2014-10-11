@@ -20,14 +20,16 @@
         <td>*Loan Amount: ($)</td>
         <td><asp:TextBox ID="tbLoanAmt" runat="server" Height="16px" TabIndex="1" ></asp:TextBox> </td>
         <td>
-            <asp:RangeValidator ID="amountValidator" runat="server" ControlToValidate="tbLoanAmt" ErrorMessage="Please Enter Valid Loan Amount" MaximumValue="99999999" MinimumValue="0" Type="Currency"></asp:RangeValidator>
+            <asp:RequiredFieldValidator ID="amountValidator" runat="server" ControlToValidate="tbLoanAmt" ErrorMessage="Please enter loan amount"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
         <td>*Annual Interest: (%)</td>
         <td><asp:TextBox ID="tbAnnualInterest" runat="server" TabIndex="2" ></asp:TextBox></td>
         
-        <td><asp:RangeValidator ID="rateValidator" runat="server" ControlToValidate="tbAnnualInterest" ErrorMessage="Enter Intrest Rate (i.e. 5)" MaximumValue="100" MinimumValue="0" Type="Double"></asp:RangeValidator></td>
+        <td>
+            <asp:RequiredFieldValidator ID="interestValidator" runat="server" ControlToValidate="tbAnnualInterest" ErrorMessage="Please enter annual interest rate"></asp:RequiredFieldValidator>
+            </td>
         
         </tr>         
         <tr>
@@ -35,7 +37,8 @@
         <td><asp:TextBox ID="tbLoanTerm" runat="server" TabIndex="3" ></asp:TextBox></td>
         
         <td>
-        <asp:RangeValidator ID="termValidator" runat="server" ControlToValidate="tbLoanTerm" ErrorMessage="Enter # of Years" MaximumValue="30" MinimumValue="0" Type="Double"></asp:RangeValidator></td>
+            <asp:RequiredFieldValidator ID="termValidator" runat="server" ControlToValidate="tbLoanTerm" ErrorMessage="Please enter loan term in years"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
         
@@ -49,7 +52,9 @@
 
         <% If Not IsPostBack Then%>Welcome to the Mortgage Calculator. Please complete fields above to receive monthly payment amount and loan replayment schedule.
 
-        <%Else%>Monthly Payment: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
+        <%Else%>&nbsp; 
+        <br />
+        <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
         
         &nbsp;
         

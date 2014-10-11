@@ -5,6 +5,10 @@ Partial Class _Default
     Inherits System.Web.UI.Page
     'Adapted from the loan calculator found at www.dreamincode.net/forums/topic/237228-looping-issues-using-a-grid-for-mortgage-calculator-amortization/
     Protected Sub btnCalcPmt_Click(sender As Object, e As EventArgs) Handles btnCalcPmt.Click
+
+        lblMonthlyPmt.Visible = True
+        loanGridView.Visible = True
+
         Dim loanAmount As Double
         Dim annualRate As Double
         Dim interestRate As Double
@@ -43,7 +47,7 @@ Partial Class _Default
         monthlyPayment = loanAmount * interestRate / (1 - Math.Pow((1 + interestRate), (-loanTerm)))
 
         'Displaying the monthly payment in the textbox and converts the variable to currency.
-        lblMonthlyPmt.Text = FormatCurrency(monthlyPayment)
+        lblMonthlyPmt.Text = "Your montly payment is " & FormatCurrency(monthlyPayment)
 
 
         'Adds items to list box, formats them for currency and adds pad spacing for each item.
@@ -105,6 +109,9 @@ Partial Class _Default
         tbLoanAmt.Text = String.Empty
         tbAnnualInterest.Text = String.Empty
         tbLoanTerm.Text = String.Empty
+
+        lblMonthlyPmt.Visible = False
+        loanGridView.Visible = False
 
 
 
