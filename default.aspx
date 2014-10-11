@@ -20,7 +20,7 @@
         <td>*Loan Amount: ($)</td>
         <td><asp:TextBox ID="tbLoanAmt" runat="server" Height="16px" TabIndex="1" ></asp:TextBox> </td>
         <td>
-            <asp:RequiredFieldValidator ID="amountValidator" runat="server" ControlToValidate="tbLoanAmt" ErrorMessage="Please enter loan amount"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="amountValidator" runat="server" ControlToValidate="tbLoanAmt" ErrorMessage="Please enter loan amount (i.e. 150000)"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -28,7 +28,7 @@
         <td><asp:TextBox ID="tbAnnualInterest" runat="server" TabIndex="2" ></asp:TextBox></td>
         
         <td>
-            <asp:RequiredFieldValidator ID="interestValidator" runat="server" ControlToValidate="tbAnnualInterest" ErrorMessage="Please enter annual interest rate"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="interestValidator" runat="server" ControlToValidate="tbAnnualInterest" ErrorMessage="Please enter interest rate (i.e. 3.99)"></asp:RequiredFieldValidator>
             </td>
         
         </tr>         
@@ -37,7 +37,7 @@
         <td><asp:TextBox ID="tbLoanTerm" runat="server" TabIndex="3" ></asp:TextBox></td>
         
         <td>
-            <asp:RequiredFieldValidator ID="termValidator" runat="server" ControlToValidate="tbLoanTerm" ErrorMessage="Please enter loan term in years"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="termValidator" runat="server" ControlToValidate="tbLoanTerm" ErrorMessage="Please enter loan term in years (i.e. 15)"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -64,8 +64,8 @@
         <alternatingrowstyle cssclass="alt" />
         </asp:GridView>
 
-        <%End If%>
-            
+        <% End If%>
+
         </div>
     </form>
 </body>
