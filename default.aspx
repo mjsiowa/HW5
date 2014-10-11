@@ -12,7 +12,7 @@
     <div class="webapp">
     
 
-    <img class="photo" src="/pics/home.jpg" /><h2>Awesome Mortgage Calculator</h2>
+    <img class="photo" src="pics/home.jpg" /><h2>Awesome Mortgage Calculator</h2>
      
 
         <table border="0">
